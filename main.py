@@ -38,7 +38,8 @@ def get_grid(rows):
 	return grid
 
 def draw_grid(win, rows):
-	pass
+	for i in range(0, WIDTH, WIDTH//rows):
+		pygame.draw.line(win, (0, 0, 0), (i, 0), (i, WIDTH), 3)
 
 def redraw_window(win, rows, grid):
 	win.fill((255, 255, 255))
