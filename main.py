@@ -38,7 +38,7 @@ def get_grid(rows):
 	return grid
 
 def draw_grid(win, rows):
-	BLACK_ROWS = 3
+	BLACK_ROWS = 2
 	for i in range(WIDTH//rows, WIDTH - WIDTH//rows, WIDTH//rows):
 		pygame.draw.line(win, (0, 0, 0), (i, 0), (i, WIDTH), 1)
 		pygame.draw.line(win, (0, 0, 0), (0, i), (WIDTH, i), 1)
