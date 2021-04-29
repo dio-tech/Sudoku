@@ -21,7 +21,7 @@ class Spot:
 		self.gap = WIDTH // self.total_rows
 		self.x = self.col * self.gap+2
 		self.y = self.row * self.gap+2
-		self.color = (255, 0, 0)
+		self.color = (255, 255, 255)
 
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.x, self.y, self.gap, self.gap), 0)
