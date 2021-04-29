@@ -19,10 +19,12 @@ class Spot:
 		self.col = col
 		self.total_rows = total_rows
 		self.gap = WIDTH // self.total_rows
+		self.x = self.col * self.gap
+		self.y = self.row * self.gap
 		self.color = (255, 0, 0)
 
 	def draw(self, win):
-		pygame.draw.rect(win, self.color, (self.row, self.col, self.gap, self.gap), 0)
+		pygame.draw.rect(win, self.color, (self.x, self.y, self.gap, self.gap), 0)
 
 def get_grid(rows):
 	grid = []
