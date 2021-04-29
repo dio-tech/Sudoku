@@ -24,7 +24,7 @@ class Spot:
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.row, self.col, self.gap, self.gap), 0)
 
-def grid(rows):
+def get_grid(rows):
 	grid = []
 
 	for i in range(rows):
@@ -50,12 +50,12 @@ def redraw_window(win, grid):
 
 def main(win):
 	ROWS = 9
-	grid = grid(ROWS)
+	grid = get_grid(ROWS)
 
 	run = True
 
 	while run:
-		redraw_window(win, ROWS)
+		redraw_window(win, ROWS, grid)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
