@@ -1,3 +1,3 @@
 # Sudoku
-'# Diogo Mendes'
+'# Diogo Mendes'\n
 '# Thursday 29th April 2021'
