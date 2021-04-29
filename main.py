@@ -43,11 +43,12 @@ def draw_grid(win, rows):
 
 def redraw_window(win, rows, grid):
 	win.fill((255, 255, 255))
-	draw_grid(win, rows)
 
 	for row in grid:
 		for spot in row:
 			spot.draw(win)
+
+	draw_grid(win, rows)
 
 
 def main(win):
