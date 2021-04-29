@@ -3,9 +3,11 @@ import pygame
 
 # UPDATE GITHUB
 # git commit -m "Initial Commmit"
+# ------------------------------------------
 os.system('git add .')
 os.system('git commit -m "Initial Commit"')
 os.system('git push')
+# ------------------------------------------
 
 WIDTH = 750
 
@@ -22,12 +24,38 @@ class Spot:
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.row, self.col, self.gap, self.gap), 0)
 
+def grid(rows):
+	grid = []
+
+	for i in range(rows):
+		grid.append([])
+		for j in range(rows):
+			spot = Spot(i, j, rows)
+			grid[i].append(spot)
+
+	return grid
+
+def draw_grid(win, rows):
+	for i in range(0, WIDTH, WIDTH//rows):
+		pygame.draw.line(win, (0, 0, 0), (i, 0), (0, i), 3)
+
+def redraw_window(win, grid):
+	win.fill((255, 255, 255))
+	draw_grid(win, rows)
+
+	for row in grid:
+		for spot in row:
+			spot.draw(win)
+
+
 def main(win):
 	ROWS = 9
+	grid = grid(ROWS)
 
 	run = True
 
 	while run:
+		redraw_window(win, ROWS)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
