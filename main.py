@@ -55,6 +55,14 @@ def redraw_window(win, rows, grid):
 
 	draw_grid(win, rows)
 
+def click(pos, rows):
+	x = pos[0]
+	y = pos[1]
+
+	row = y // WIDTH // rows
+	col = x // WIDTH // rows
+
+	return row, col
 
 def main(win):
 	ROWS = 9
@@ -68,6 +76,10 @@ def main(win):
 			if event.type == pygame.QUIT:
 				run = False
 				pygame.quit()
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				pos = pygame.mouse.get_pos()
+				row, col = click(pos)
+				print(pos)
 
 		pygame.display.update()
 
