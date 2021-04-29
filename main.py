@@ -42,7 +42,7 @@ def draw_grid(win, rows):
 	for i in range(WIDTH//rows, WIDTH - WIDTH//rows, WIDTH//rows):
 		pygame.draw.line(win, (0, 0, 0), (i, 0), (i, WIDTH), 1)
 		pygame.draw.line(win, (0, 0, 0), (0, i), (WIDTH, i), 1)
-	for i in range(0, WIDTH, WIDTH//BLACK_ROWS):
+	for i in range(WIDTH//BLACK_ROWS, WIDTH, WIDTH//BLACK_ROWS):
 		pygame.draw.line(win, (0, 0, 0), (i, 0), (i, WIDTH), 3)
 		pygame.draw.line(win, (0, 0, 0), (0, i), (WIDTH, i), 3)
 
