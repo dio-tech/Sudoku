@@ -19,8 +19,8 @@ class Spot:
 		self.col = col
 		self.total_rows = total_rows
 		self.gap = WIDTH // self.total_rows
-		self.x = self.col * self.gap
-		self.y = self.row * self.gap
+		self.x = self.col * self.gap+1
+		self.y = self.row * self.gap+1
 		self.color = (255, 0, 0)
 
 	def draw(self, win):
