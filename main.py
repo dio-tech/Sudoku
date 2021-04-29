@@ -78,7 +78,7 @@ def main(win):
 				pygame.quit()
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				pos = pygame.mouse.get_pos()
-				row, col = click(pos)
+				row, col = click(pos, ROWS)
 				print(pos)
 
 		pygame.display.update()
