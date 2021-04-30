@@ -70,11 +70,12 @@ def select(win, pos, rows, gap):
 	x = col * gap
 	y = row * gap
 
-	pygame.draw.rect(win, (255, 0, 0), (x, y, gap, gap), 2)
+	return x, y
 
 def main(win):
 	ROWS = 9
 	grid = get_grid(ROWS)
+	selected = []
 
 	gap = WIDTH // ROWS
 
@@ -90,7 +91,8 @@ def main(win):
 				pos = pygame.mouse.get_pos()
 				row, col = click(pos, ROWS)
 				print(row, col)
-				select(win, pos, ROWS, gap)
+				x, y = select(win, pos, ROWS, gap)
+				selected.append((x, y))
 
 		pygame.display.update()
 
