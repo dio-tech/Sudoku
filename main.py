@@ -23,13 +23,15 @@ class Spot:
 		self.x = self.col * self.gap+2
 		self.y = self.row * self.gap+2
 		self.color = (255, 255, 255)
+		self.choice = None
 
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.x, self.y, self.gap, self.gap), 0)
 
 	def draw_test_numbers(self, win, choice):
+		self.choice = choice
 		font = pygame.font.SysFont("comicsans", 50)
-		text = font.render(choice, True, (128, 128, 128))
+		text = font.render(self.choice, True, (128, 128, 128))
 		win.blit(text, (self.x+5, self.y+2))
 
 def get_grid(rows):
