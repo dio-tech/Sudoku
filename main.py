@@ -81,6 +81,7 @@ def main(win):
 	selected = []
 
 	spot_selected = None
+	choice = None
 
 	gap = WIDTH // ROWS
 
@@ -88,6 +89,7 @@ def main(win):
 
 	while run:
 		redraw_window(win, ROWS, grid, selected, gap)
+		print(choice)
 
 		if len(selected) == 2:
 			selected.remove(selected[0])
@@ -104,6 +106,28 @@ def main(win):
 				selected.append((x, y))
 
 				spot_selected = row, col
+			keys = pygame.key.get_pressed()
+			if spot_selected != None:
+				if keys[pygame.K_1]:
+					choice = 1
+				if keys[pygame.K_2]:
+					choice = 2
+				if keys[pygame.K_3]:
+					choice = 3
+				if keys[pygame.K_4]:
+					choice = 4
+				if keys[pygame.K_5]:
+					choice = 5
+				if keys[pygame.K_6]:
+					choice = 6
+				if keys[pygame.K_7]:
+					choice = 7
+				if keys[pygame.K_8]:
+					choice = 8
+				if keys[pygame.K_9]:
+					choice = 9
+				if keys[pygame.K_0]:
+					choice = 0
 
 		pygame.display.update()
 
