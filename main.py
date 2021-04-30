@@ -64,9 +64,19 @@ def click(pos, rows):
 
 	return row, col
 
+def select(win, pos, rows, gap):
+	row, col = click(pos, rows)
+
+	x = col * gap
+	y = row * gap
+
+	pygame.draw.rect(win, (255, 0, 0), (x, y, gap, gap), 2)
+
 def main(win):
 	ROWS = 9
 	grid = get_grid(ROWS)
+
+	gap = WIDTH // ROWS
 
 	run = True
 
@@ -80,6 +90,7 @@ def main(win):
 				pos = pygame.mouse.get_pos()
 				row, col = click(pos, ROWS)
 				print(row, col)
+				select(win, pos, ROWS, gap)
 
 		pygame.display.update()
 
