@@ -82,6 +82,7 @@ def main(win):
 
 	spot_selected = None
 	choice = None
+	changed = False
 
 	gap = WIDTH // ROWS
 
@@ -92,7 +93,12 @@ def main(win):
 		print(choice)
 
 		if len(selected) == 2:
+			changed = True
 			selected.remove(selected[0])
+
+		if changed:
+			choice = None
+			changed = False
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
