@@ -64,8 +64,8 @@ def redraw_window(win, rows, grid, selected, gap, draw_test, choice):
 
 	draw_grid(win, rows)
 
-	for spot in draw_test:
-		spot.draw_test_numbers(win, choice)
+	for coor in draw_test:
+		grid[coor[0]][coor[1]].draw_test_numbers(win, choice)
 
 
 def click(pos, rows):
@@ -114,7 +114,7 @@ def main(win):
 
 		if choice != None:
 			col, row = spot_selected
-			draw_test.append(grid[row][col])
+			draw_test.append((row, col))
 			choice = None
 
 		for event in pygame.event.get():
