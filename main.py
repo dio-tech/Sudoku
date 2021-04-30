@@ -106,7 +106,7 @@ def main(win):
 			changed = False
 
 		if choice != None:
-			row, col = spot_selected
+			col, row = spot_selected
 			grid[row][col].draw_test_numbers(win, choice)
 
 		for event in pygame.event.get():
