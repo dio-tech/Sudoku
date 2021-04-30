@@ -114,6 +114,7 @@ def main(win):
 		if choice != None:
 			col, row = spot_selected
 			draw_test.append(grid[row][col])
+			choice = None
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
