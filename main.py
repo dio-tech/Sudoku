@@ -86,6 +86,10 @@ def main(win):
 
 	while run:
 		redraw_window(win, ROWS, grid, selected, gap)
+
+		if len(selected) == 2:
+			selected.remove(selected[0])
+
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
