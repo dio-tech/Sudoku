@@ -26,6 +26,11 @@ class Spot:
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.x, self.y, self.gap, self.gap), 0)
 
+	def draw_test_numbers(self, win, choice):
+		font = pygame.font.SysFont("comicsans", 30)
+		text = font.render(choice, True, (128, 128, 128))
+		win.blit(text, (self.x, self.y))
+
 def get_grid(rows):
 	grid = []
 
@@ -90,7 +95,6 @@ def main(win):
 
 	while run:
 		redraw_window(win, ROWS, grid, selected, gap)
-		print(choice)
 
 		if len(selected) == 2:
 			changed = True
@@ -99,6 +103,10 @@ def main(win):
 		if changed:
 			choice = None
 			changed = False
+
+		if choice != None:
+			row, col = spot_selected
+			grid[row][col].draw_test_numbers(win, choice)
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
