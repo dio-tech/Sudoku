@@ -71,7 +71,6 @@ def select(win, pos, rows, gap):
 	y = row * gap
 
 	pygame.draw.rect(win, (255, 0, 0), (x, y, gap, gap), 2)
-	pygame.display.update()
 
 def main(win):
 	ROWS = 9
