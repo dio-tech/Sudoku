@@ -87,7 +87,6 @@ def main(win):
 	run = True
 
 	while run:
-		print(spot_selected)
 		redraw_window(win, ROWS, grid, selected, gap)
 
 		if len(selected) == 2:
@@ -100,9 +99,10 @@ def main(win):
 			if event.type == pygame.MOUSEBUTTONDOWN:
 				pos = pygame.mouse.get_pos()
 				row, col = click(pos, ROWS)
-				print(row, col)
+
 				x, y = select(win, pos, ROWS, gap)
 				selected.append((x, y))
+
 				spot_selected = row, col
 
 		pygame.display.update()
