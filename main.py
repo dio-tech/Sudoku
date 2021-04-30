@@ -15,7 +15,7 @@ WIDTH = 750
 WIN = pygame.display.set_mode((WIDTH, WIDTH))
 
 class Spot:
-	def __init__(self, row, col, total_rows):
+	def __init__(self, row, col, total_rows, choice):
 		self.row = row
 		self.col = col
 		self.total_rows = total_rows
