@@ -66,7 +66,7 @@ def redraw_window(win, rows, grid, selected, gap, draw_test, choice):
 	draw_grid(win, rows)
 
 	for coor in draw_test:
-		grid[coor[0]][coor[1]].draw_test_numbers(win, choice)
+		grid[coor[0]][coor[1]].draw_test_numbers(win)
 
 
 def click(pos, rows):
