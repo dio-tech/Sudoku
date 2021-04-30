@@ -46,12 +46,15 @@ def draw_grid(win, rows):
 		pygame.draw.line(win, (0, 0, 0), (i, 0), (i, WIDTH), 3)
 		pygame.draw.line(win, (0, 0, 0), (0, i), (WIDTH, i), 3)
 
-def redraw_window(win, rows, grid):
+def redraw_window(win, rows, grid, selected, gap):
 	win.fill((255, 255, 255))
 
 	for row in grid:
 		for spot in row:
 			spot.draw(win)
+
+	for rect in selected:
+		pygame.draw.rect(win, (255, 0, 0), (rect[0], rect[1], gap, gap), 2)
 
 	draw_grid(win, rows)
 
@@ -82,7 +85,7 @@ def main(win):
 	run = True
 
 	while run:
-		redraw_window(win, ROWS, grid)
+		redraw_window(win, ROWS, grid, selected, gap)
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
 				run = False
