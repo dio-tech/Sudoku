@@ -124,25 +124,25 @@ def main(win):
 			keys = pygame.key.get_pressed()
 			if spot_selected != None:
 				if keys[pygame.K_1]:
-					choice = 1
+					choice = "1"
 				if keys[pygame.K_2]:
-					choice = 2
+					choice = "2"
 				if keys[pygame.K_3]:
-					choice = 3
+					choice = "3"
 				if keys[pygame.K_4]:
-					choice = 4
+					choice = "4"
 				if keys[pygame.K_5]:
-					choice = 5
+					choice = "5"
 				if keys[pygame.K_6]:
-					choice = 6
+					choice = "6"
 				if keys[pygame.K_7]:
-					choice = 7
+					choice = "7"
 				if keys[pygame.K_8]:
-					choice = 8
+					choice = "8"
 				if keys[pygame.K_9]:
-					choice = 9
+					choice = "9"
 				if keys[pygame.K_0]:
-					choice = 0
+					choice = "0"
 
 		pygame.display.update()
 
