@@ -104,7 +104,7 @@ def main(win):
 
 	while run:
 		redraw_window(win, ROWS, grid, selected, gap, draw_test, choice)
-		print(draw_test)
+		print(grid[1][1].choice)
 
 		if len(selected) == 2:
 			changed = True
