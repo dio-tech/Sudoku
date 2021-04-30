@@ -87,8 +87,6 @@ def main(win):
 	while run:
 		redraw_window(win, ROWS, grid, selected, gap)
 
-		if len(selected) == 2:
-			selected.remove(selected[0])
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
@@ -100,6 +98,9 @@ def main(win):
 				print(row, col)
 				x, y = select(win, pos, ROWS, gap)
 				selected.append((x, y))
+
+		if len(selected) == 2:
+			selected.remove(selected[0])
 
 		pygame.display.update()
 
