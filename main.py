@@ -62,10 +62,11 @@ def redraw_window(win, rows, grid, selected, gap, draw_test, choice):
 	for rect in selected:
 		pygame.draw.rect(win, (255, 0, 0), (rect[1], rect[0], gap, gap), 3)
 
+	draw_grid(win, rows)
+
 	for spot in draw_test:
 		spot.draw_test_numbers(win, choice)
 
-	draw_grid(win, rows)
 
 def click(pos, rows):
 	x = pos[0]
