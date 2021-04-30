@@ -59,8 +59,8 @@ def click(pos, rows):
 	x = pos[0]
 	y = pos[1]
 
-	row = WIDTH // rows // y
-	col = WIDTH // rows // x
+	row = y * WIDTH // rows
+	col = x * WIDTH // rows
 
 	return row, col
 
