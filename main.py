@@ -23,24 +23,23 @@ class Spot:
 		self.x = self.col * self.gap+2
 		self.y = self.row * self.gap+2
 		self.color = (255, 255, 255)
-		self.choice = None
+		self.choice = choice
 
 	def draw(self, win):
 		pygame.draw.rect(win, self.color, (self.x, self.y, self.gap, self.gap), 0)
 
-	def draw_test_numbers(self, win, choice):
-		self.choice = choice
+	def draw_test_numbers(self, win):
 		font = pygame.font.SysFont("comicsans", 50)
 		text = font.render(self.choice, True, (128, 128, 128))
 		win.blit(text, (self.x+5, self.y+2))
 
-def get_grid(rows):
+def get_grid(rows, choice):
 	grid = []
 
 	for i in range(rows):
 		grid.append([])
 		for j in range(rows):
-			spot = Spot(i, j, rows)
+			spot = Spot(i, j, rows, choice)
 			grid[i].append(spot)
 
 	return grid
@@ -89,12 +88,13 @@ def select(win, pos, rows, gap):
 
 def main(win):
 	ROWS = 9
-	grid = get_grid(ROWS)
 	selected = []
 
 	spot_selected = None
 	choice = None
 	changed = False
+
+	grid = get_grid(ROWS, choice)
 
 	draw_test = []
 
