@@ -1,5 +1,6 @@
 import os
 import pygame
+pygame.font.init()
 
 # UPDATE GITHUB
 # git commit -m "Initial Commmit"
