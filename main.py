@@ -52,7 +52,7 @@ def draw_grid(win, rows):
 		pygame.draw.line(win, (0, 0, 0), (i, 0), (i, WIDTH), 3)
 		pygame.draw.line(win, (0, 0, 0), (0, i), (WIDTH, i), 3)
 
-def redraw_window(win, rows, grid, selected, gap):
+def redraw_window(win, rows, grid, selected, gap, draw_test, choice):
 	win.fill((255, 255, 255))
 
 	for row in grid:
@@ -61,6 +61,9 @@ def redraw_window(win, rows, grid, selected, gap):
 
 	for rect in selected:
 		pygame.draw.rect(win, (255, 0, 0), (rect[1], rect[0], gap, gap), 3)
+
+	for spot in draw_test:
+		spot.draw_test_numbers(win, choice)
 
 	draw_grid(win, rows)
 
@@ -90,12 +93,14 @@ def main(win):
 	choice = None
 	changed = False
 
+	draw_test = []
+
 	gap = WIDTH // ROWS
 
 	run = True
 
 	while run:
-		redraw_window(win, ROWS, grid, selected, gap)
+		redraw_window(win, ROWS, grid, selected, gap, draw_test, choice)
 
 		if len(selected) == 2:
 			changed = True
@@ -107,7 +112,7 @@ def main(win):
 
 		if choice != None:
 			col, row = spot_selected
-			grid[row][col].draw_test_numbers(win, choice)
+			draw_test.append(grid[row][col])
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
