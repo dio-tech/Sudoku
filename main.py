@@ -54,7 +54,7 @@ def redraw_window(win, rows, grid, selected, gap):
 			spot.draw(win)
 
 	for rect in selected:
-		pygame.draw.rect(win, (255, 0, 0), (rect[0], rect[1], gap, gap), 2)
+		pygame.draw.rect(win, (255, 0, 0), (rect[1], rect[0], gap, gap), 3)
 
 	draw_grid(win, rows)
 
