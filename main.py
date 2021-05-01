@@ -33,6 +33,9 @@ class Spot:
 		text = font.render(self.choice, True, (128, 128, 128))
 		win.blit(text, (self.x+5, self.y+2))
 
+	def get_choice(self):
+		return self.choice
+
 def get_grid(rows, choice):
 	grid = []
 
@@ -104,7 +107,7 @@ def main(win):
 
 	while run:
 		redraw_window(win, ROWS, grid, selected, gap, draw_test, choice)
-		print(grid[1][1].choice)
+		print(grid[1][1].get_choice())
 
 		if len(selected) == 2:
 			changed = True
