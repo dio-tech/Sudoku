@@ -23,7 +23,7 @@ board = [
 ]
 
 def print_board(bo):
-	for i in range(len(board)):
+	for i in range(len(bo)):
 		if i % 3 and i != 0:
 			print('- - - - - - - - - - - - -')
 
@@ -35,4 +35,6 @@ def print_board(bo):
 				print(bo[i][j])
 			else:
 				print(str(bo[i][j]) + " ")
+
+print_board(board)
 
