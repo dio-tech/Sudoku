@@ -6,7 +6,7 @@ def solve(bo):
 		row, col = find
 
 	for i in range(1, 10):
-		if valid(board, i, (row, col)):
+		if valid(bo, i, (row, col)):
 			bo[row][col] = i
 
 			if solve(bo):
